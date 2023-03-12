@@ -5,7 +5,7 @@ const httpStatus = require("http-status");
 const auth = async (req, res, next) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
-    const result = jwt.verify(token, process.env.SECRET);
+    const result = jwt.verify(token, "Jfjk14hJfjk1fhjd");
     const { userId } = result;
     const user = await getUserById(userId);
     req.user = user;

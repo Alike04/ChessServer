@@ -7,13 +7,13 @@ const { updateUser } = require("../services/UserService")
 
 
 userRouter.post("/login", catchAsync(async (req, res) => {
-  const token = await login(req.body.email, req.body.password)
-  res.status(200).json({ token: token })
+  const token = await login(req.body.gmail, req.body.password)
+  res.status(200).json(token)
 }))
 
 userRouter.post("/register", catchAsync(async (req, res) => {
   const token = await register(req.body);
-  res.status(200).json({ token: token })
+  res.status(200).json(token)
 }))
 userRouter.post("/solve", auth, async (req, res) => {
   const user = updateUser(req.puzzleId, req.user._id);

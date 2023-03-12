@@ -9,7 +9,7 @@ const getUserById = async (id) => {
   return user;
 }
 const getUserByEmail = async (email) => {
-  const user = User.find({ email: email });
+  const user = await User.findOne({ gmail: email });
   return user;
 }
 const updateUser = async (puzzleId, userId) => {
